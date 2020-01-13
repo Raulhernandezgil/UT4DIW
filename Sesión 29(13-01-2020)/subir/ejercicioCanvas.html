@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilo1.css">
+    <script>
+        function dibujarLinea(){
+            var canvasvar1 = document.getElementById("canvas1"); 
+            var contexto1 = canvasvar1.getContext("2d"); 
+            contexto1.moveTo(0, 0); 
+            contexto1.lineTo(125,73);/*Eje x eje y*/ 
+            contexto1.stroke();
+            for(i=0;i<35;i++){
+                contexto1.moveTo(0, i); 
+                contexto1.lineTo(125,73);/*Eje x eje y*/ 
+                contexto1.stroke();
+            }
+            contexto1.moveTo(0, 35); 
+            contexto1.lineTo(125,73);/*Eje x eje y*/ 
+            contexto1.stroke();
+
+            contexto1.moveTo(200, 0); 
+            contexto1.lineTo(125,73);/*Eje x eje y*/ 
+            contexto1.stroke();
+            for(j=0;j<25;j++){
+                contexto1.moveTo(200, j); 
+                contexto1.lineTo(125,73);/*Eje x eje y*/ 
+                contexto1.stroke();
+                } 
+            contexto1.moveTo(200, 25); 
+            contexto1.lineTo(125,73);/*Eje x eje y*/ 
+            contexto1.stroke();
+
+            contexto1.moveTo(0, 150); 
+            contexto1.lineTo(115,75);/*Eje x eje y*/ 
+            contexto1.stroke();
+            contexto1.moveTo(200,150); 
+            contexto1.lineTo(115,75);/*Eje x eje y*/ 
+            contexto1.stroke();
+
+        }
+
+        function dibujarTexto(){
+            var canvasvar1 = document.getElementById("canvas1"); var contexto1 = canvasvar1.getContext("2d"); contexto1.font = "30px Arial"; contexto1.fillText("Cosas Nazis",15, 125);/*x, y*/
+        }
+
+        function circulo(){
+            var canvasvar1 = document.getElementById("canvas1"); var contexto1 = canvasvar1.getContext("2d"); contexto1.beginPath(); contexto1.arc(50, 25, 20, 0, 2 * Math.PI);/*Eje x, eje y, radio, inicio de la circunferencia (0) y final de la circunferencia(2*PI) (2*Math.PI*R es la longitud completa de la circunferencia*/ contexto1.stroke();
+        }
+     </script>
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1" class="clase_canvas" width="200" height="150">
+
+    </canvas>
+    <button onclick="dibujarLinea()">Dibujar linea</button>
+    <button onclick="dibujarTexto()">Dibujar TEXTO</button>
+    <button onclick="dibujarCirculo()">Dibujar Circulo</button>
+</body>
+</html>

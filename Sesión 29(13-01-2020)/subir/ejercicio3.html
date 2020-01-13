@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estio2.css">
+    <script>
+        function soporta(){
+            if (typeof(Storage) !== "undefined") { 
+            window.alert("El navegador soporta almacenamiento local"); 
+            } else { 
+                window.alert("El navegador no soporta almacenamiento local"); 
+            }
+        }
+
+        function elementoEquipo(){
+           // Primero comprobamos la compatibilidad del navegador 
+           if (typeof(Storage) !== "undefined") { 
+               //Almacenamos 
+               localStorage.setItem("equipo", "Deportivo"); 
+               //Obtenemos los datos 
+               document.getElementById("elementoAlmacen").innerHTML = localStorage.getItem("equipo"); 
+            } else { 
+                document.getElementById("elementoAlmacen").innerHTML = "El navegador no es compatible con almacenamiento local"; 
+            } 
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="soporta()">Soporta o no el almacenamiento local??</button>
+    <button onclick="elementoEquipo()">Trabajar con elemento equipo</button>
+
+    </p>
+    <!-- En este div voy a dibujar el elemento almacenado en localStorage -->
+    <div id="elementoAlmacen"></div>
+</body>
+</html>
